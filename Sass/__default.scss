@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// =========== Font families ==============
+@font-face {
+    font-family: Poppins-Extralight;
+    src: url(../assets/font/Poppins/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url(../assets/font/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Thin;
+    src: url(../assets/font/Poppins/Poppins-Thin.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Semibold;
+    src: url(../assets/font/Poppins/Poppins-SemiBold.ttf);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rəmz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <!-- Header -->
+     <header>
+        <div class="header-container">
+            <a href="#"><img src="./assets/img/logo-light 1.svg" alt="logo"></a>
+            <div class="admin">
+                <i class="fa-solid fa-user"></i>
+                <p id="admin_fullname" class="admin_fullname">
+                   Zahra Malikzada
+                </p>
+            </div>
+        </div>
+     </header>
+
+     <!-- Main -->
+     <main>
+
+        <!-- Nav side -->
+         <nav>
+            <ul class="menu-list">
+                <li class="list-item"><a href="#"><i class="fa-solid fa-hospital-user"></i> Patients</a></li>
+                <li class="list-item"><a href="#"><i class="fa-solid fa-user-doctor"></i> Doctors</a></li>
+                <li class="list-item"><a href="#"><i class="fa-solid fa-hospital"></i> Hospitals</a></li>
+                <li class="list-item"><a href="#"><i class="fa-solid fa-user-tie"></i> Admins</a></li>
+                <li class="list-item"><a href="#"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
+                <li class="list-item"><a href="#"><i class="fa-solid fa-bell"></i> Subscriptions</a></li>
+                <li class="list-item"><a href="#"><i class="fa-solid fa-chart-simple"></i> Statistics</a></li>
+                <li class="list-item"><a href="#"><i class="fa-solid fa-gears"></i> Settings</a></li>
+                <li class="list-item logout"><a href="#" class="logout_btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
+            </ul>
+         </nav>
+
+         <!-- Patient data -->
+         <section class="patient-main">
+            <!-- Filter -->
+            <div class="patient-filter">
+                <div>
+                    <input type="text" name="" id="patientsearch_input" value="" >
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <select>
+                    <option value="" hidden>Filter</option>
+                    <option value="Oldes">Oldest</option>
+                    <option value="Newest">Newest</option>
+                </select>
+            </div>
+
+            <!-- Patients -->
+            <div>
+
+            </div>
+        </section>
+     </main>
+</body>
+</html>
