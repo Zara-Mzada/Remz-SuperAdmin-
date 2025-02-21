@@ -39,8 +39,45 @@
                 <li class="list-item logout"><a href="#" class="logout_btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
             </ul>
          </nav>
+
+         <!-- Doctor data -->
+         <section class="doctor-main">
+            <!-- Filter -->
+            <div class="doctor-finding">
+                <div class="search-container">
+                    <input type="text" name="" id="doctorsearch_input" value="" placeholder="Name, Surname, Speciality, Hospital">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <select class="doctor-filter" id="doctor-filter">
+                    <option value="Oldes">Oldest</option>
+                    <option value="Newest">Newest</option>
+                </select>
+                <select name="" id="doctor-speciality" class =doctor-speciality>
+                    <option value="Speciality" hidden>Speciality</option>
+                </select>
+            </div>
+
+            <!-- Doctors -->
+            <div class="doctors-container">
+                <table class="doctor-table">
+                    <thead >
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Speciality</th>
+                            <th>Birthdate</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="doc-tbody"></tbody>
+                </table>
+            </div>
+        </section>
      </main>
 
-     <script src="script.js"></script>
+
+    <script src="doctor.js"></script>
 </body>
 </html>

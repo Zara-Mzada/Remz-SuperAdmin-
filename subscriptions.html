@@ -39,8 +39,45 @@
                 <li class="list-item logout"><a href="#" class="logout_btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
             </ul>
          </nav>
-     </main>
 
-     <script src="script.js"></script>
+         <!-- Subscriptions data -->
+         <section class="subscription-main">
+            <!-- Filter -->
+            <div class="subscription-finding">
+                <div class="search-container">
+                    <input type="text" name="" id="subscriptionsearch_input" value="" placeholder="Name, Surname, Speciality, Hospital">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <select class="subscription-filter" id="subscription-filter">
+                    <option value="Oldes">Oldest</option>
+                    <option value="Newest">Newest</option>
+                </select>
+                <select name="" id="subscription-status" class ="subscription-status">
+                    <option value="Status" hidden>Status</option>
+                </select>
+                <select name="" id="subscription-doctor" class ="subscription-doctor">
+                    <option value="Hospitals" hidden>Hospitals</option>
+                </select>
+            </div>
+
+            <!-- Subscriptions -->
+            <div class="subscriptions-container">
+                <table class="subscription-table">
+                    <thead class="subscription-thead">
+                        <tr>
+                            <th>Hospital</th>
+                            <th>Subscription Status</th>
+                            <th>Start Date</th>
+                            <th>Expire Date</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="subscription-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+     </main>
+     <script src="subscription.js"></script>
 </body>
 </html>

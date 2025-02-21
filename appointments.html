@@ -39,8 +39,49 @@
                 <li class="list-item logout"><a href="#" class="logout_btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
             </ul>
          </nav>
+
+         <!-- Appointment data -->
+         <section class="appointment-main">
+            <!-- Filter -->
+            <div class="appointment-finding">
+                <div class="search-container">
+                    <input type="text" name="" id="appointmetsearch_input" value="" placeholder="Name, Surname, Speciality, Hospital">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <select class="appointment-filter" id="appointment-filter">
+                    <option value="Oldes">Oldest</option>
+                    <option value="Newest">Newest</option>
+                </select>
+                <select name="" id="appointment-speciality" class = "appointment-speciality">
+                    <option value="Speciality" hidden>Speciality</option>
+                </select>
+                <select name="" id="appointment-doctor" class =appointment-doctor>
+                    <option value="Doctors" hidden>Doctors</option>
+                </select>
+            </div>
+
+            <!-- Appointments -->
+            <div class="appointments-container">
+                <table class="appointment-table">
+                    <thead class="appointment-thead">
+                        <tr>
+                            <th>Patient Fullname</th>
+                            <th>Doctor Fullname</th>
+                            <th>Service</th>
+                            <th>Hospital</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="appointment-tbody"></tbody>
+                </table>
+            </div>
+        </section>
      </main>
 
-     <script src="script.js"></script>
+     <script src="appointment.js"></script>
 </body>
 </html>

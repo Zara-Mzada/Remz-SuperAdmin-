@@ -28,14 +28,14 @@
         <!-- Nav side -->
          <nav>
             <ul class="menu-list">
-                <li class="list-item"><a href="#"><i class="fa-solid fa-hospital-user"></i> Patients</a></li>
-                <li class="list-item"><a href="#"><i class="fa-solid fa-user-doctor"></i> Doctors</a></li>
-                <li class="list-item"><a href="#"><i class="fa-solid fa-hospital"></i> Hospitals</a></li>
-                <li class="list-item"><a href="#"><i class="fa-solid fa-user-tie"></i> Admins</a></li>
-                <li class="list-item"><a href="#"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
-                <li class="list-item"><a href="#"><i class="fa-solid fa-bell"></i> Subscriptions</a></li>
-                <li class="list-item"><a href="#"><i class="fa-solid fa-chart-simple"></i> Statistics</a></li>
-                <li class="list-item"><a href="#"><i class="fa-solid fa-gears"></i> Settings</a></li>
+                <li class="list-item"><a href="patients.html"><i class="fa-solid fa-hospital-user"></i> Patients</a></li>
+                <li class="list-item"><a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Doctors</a></li>
+                <li class="list-item"><a href="hospitals.html"><i class="fa-solid fa-hospital"></i> Hospitals</a></li>
+                <li class="list-item"><a href="admins.html"><i class="fa-solid fa-user-tie"></i> Admins</a></li>
+                <li class="list-item"><a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
+                <li class="list-item"><a href="subscriptions.html"><i class="fa-solid fa-bell"></i> Subscriptions</a></li>
+                <li class="list-item"><a href="statistics.html"><i class="fa-solid fa-chart-simple"></i> Statistics</a></li>
+                <li class="list-item"><a href="settings.html"><i class="fa-solid fa-gears"></i> Settings</a></li>
                 <li class="list-item logout"><a href="#" class="logout_btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
             </ul>
          </nav>
@@ -43,14 +43,13 @@
          <!-- Patient data -->
          <section class="patient-main">
             <!-- Filter -->
-            <div class="patient-filter">
-                <div>
+            <div class="patient-finding">
+                <div class="search-container">
                     <input type="text" name="" id="patientsearch_input" value="" >
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <select>
-                    <option value="" hidden>Filter</option>
-                    <option value="Oldes">Oldest</option>
+                <select class="patient-filter">
+                    <option value="Oldest">Oldest</option>
                     <option value="Newest">Newest</option>
                 </select>
             </div>

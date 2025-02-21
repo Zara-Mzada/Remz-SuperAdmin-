@@ -109,31 +109,480 @@ main nav .menu-list .list-item:last-child:hover {
 }
 
 .patient-main {
+  width: 100%;
   padding: 40px 25px;
   display: flex;
   flex-direction: column;
 }
-.patient-main .patient-filter {
-  width: 100%;
+.patient-main .patient-finding {
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
-.patient-main .patient-filter div {
-  display: flex;
+.patient-main .patient-finding div {
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  overflow: hidden;
+  background: linear-gradient(180deg, rgb(47, 181, 177) 0%, rgb(26, 101, 98) 50%);
+  padding: 2px;
+  border-radius: 15px;
 }
-.patient-main .patient-filter div input {
-  width: 440px;
-  padding: 15px 30px;
-  font-size: 12px;
-  font-family: Poppins-Extralight;
-  border: 2px solid;
-  -o-border-image: linear-gradient(180deg, rgb(47, 181, 177) 0%, rgb(26, 101, 98) 50%);
-     border-image: linear-gradient(180deg, rgb(47, 181, 177) 0%, rgb(26, 101, 98) 50%);
-  border-image-slice: 1;
-  border-radius: 25px;
+.patient-main .patient-finding div input {
+  width: 400px;
+  height: 36px;
+  font-size: 14px;
+  padding-left: 40px;
+  border: none;
   outline: none;
-  overflow: hidden;
+  border-radius: inherit;
+  background: white;
+}
+.patient-main .patient-finding div i {
+  position: absolute;
+  left: 10px;
+  color: gray;
+}
+.patient-main .patient-finding .patient-filter {
+  width: 100px;
+  padding: 10px;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+.doctor-main {
+  width: 100%;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(153, 235, 249, 0.1);
+}
+.doctor-main .doctor-finding {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.doctor-main .doctor-finding div {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(47, 181, 177) 0%, rgb(26, 101, 98) 50%);
+  padding: 2px;
+  border-radius: 15px;
+}
+.doctor-main .doctor-finding div input {
+  width: 400px;
+  height: 36px;
+  font-size: 14px;
+  padding-left: 40px;
+  border: none;
+  outline: none;
+  border-radius: inherit;
+  background: white;
+}
+.doctor-main .doctor-finding div i {
+  position: absolute;
+  left: 10px;
+  color: gray;
+}
+.doctor-main .doctor-finding select {
+  width: 100px;
+  padding: 10px;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+.doctor-main .doctors-container {
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid rgb(198, 198, 198);
+  border-radius: 15px;
+}
+.doctor-main .doctors-container table {
+  width: 100%;
+  padding: 10px;
+  border-collapse: collapse;
+}
+.doctor-main .doctors-container table thead tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.doctor-main .doctors-container table tbody tr {
+  cursor: pointer;
+}
+.doctor-main .doctors-container table tbody tr td {
+  padding: 10px 0;
+  font-family: Poppins-Medium;
+  font-size: 14px;
+  color: #858585;
+}
+.doctor-main .doctors-container table tbody tr td:first-child {
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.doctor-main .doctors-container table tbody tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.doctor-main .doctors-container table tbody tr td img {
+  width: 80px;
+  height: 80px;
+}
+.doctor-main .doctors-container table tbody tr td i {
+  font-size: 20px;
+  padding-left: 15px;
+}
+.doctor-main .doctors-container table tbody tr td .fa-pen-to-square {
+  color: rgb(16, 123, 255);
+}
+.doctor-main .doctors-container table tbody tr td .fa-trash {
+  color: red;
+}
+.doctor-main .doctors-container table tbody tr .image {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
+.doctor-main .doctors-container table tbody tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.doctor-main .doctors-container table tbody tr:nth-child(n):hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.admin-main {
+  width: 100%;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(153, 235, 249, 0.1);
+}
+.admin-main .admin-finding {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.admin-main .admin-finding div {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(47, 181, 177) 0%, rgb(26, 101, 98) 50%);
+  padding: 2px;
+  border-radius: 15px;
+}
+.admin-main .admin-finding div input {
+  width: 400px;
+  height: 36px;
+  font-size: 14px;
+  padding-left: 40px;
+  border: none;
+  outline: none;
+  border-radius: inherit;
+  background: white;
+}
+.admin-main .admin-finding div i {
+  position: absolute;
+  left: 10px;
+  color: gray;
+}
+.admin-main .admins-container {
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid rgb(198, 198, 198);
+  border-radius: 15px;
+}
+.admin-main .admins-container .admin-table {
+  width: 100%;
+  padding: 10px;
+  border-collapse: collapse;
+}
+.admin-main .admins-container .admin-table .adm-thead tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr {
+  cursor: pointer;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr td {
+  padding: 10px 0;
+  font-family: Poppins-Medium;
+  font-size: 14px;
+  color: #858585;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr td:first-child {
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr td img {
+  width: 80px;
+  height: 80px;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr td i {
+  font-size: 20px;
+  padding-left: 15px;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr td .fa-pen-to-square {
+  color: rgb(16, 123, 255);
+}
+.admin-main .admins-container .admin-table .adm-tbody tr td .fa-trash {
+  color: red;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr .image {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.admin-main .admins-container .admin-table .adm-tbody tr:nth-child(n):hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.appointment-main {
+  width: 100%;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(153, 235, 249, 0.1);
+}
+.appointment-main .appointment-finding {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.appointment-main .appointment-finding div {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(47, 181, 177) 0%, rgb(26, 101, 98) 50%);
+  padding: 2px;
+  border-radius: 15px;
+}
+.appointment-main .appointment-finding div input {
+  width: 400px;
+  height: 36px;
+  font-size: 14px;
+  padding-left: 40px;
+  border: none;
+  outline: none;
+  border-radius: inherit;
+  background: white;
+}
+.appointment-main .appointment-finding div i {
+  position: absolute;
+  left: 10px;
+  color: gray;
+}
+.appointment-main .appointment-finding select {
+  width: 100px;
+  padding: 10px;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+.appointment-main .appointments-container {
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid rgb(198, 198, 198);
+  border-radius: 15px;
+}
+.appointment-main .appointments-container .appointment-table {
+  width: 100%;
+  padding: 10px;
+  border-collapse: collapse;
+}
+.appointment-main .appointments-container .appointment-table .appointment-thead tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr {
+  cursor: pointer;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td {
+  padding: 10px 0;
+  font-family: Poppins-Medium;
+  font-size: 14px;
+  color: #858585;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td img {
+  width: 80px;
+  height: 80px;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td i {
+  font-size: 20px;
+  padding-left: 15px;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td .fa-pen-to-square {
+  color: rgb(16, 123, 255);
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td .fa-trash {
+  color: red;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td .Reserved {
+  color: rgb(0, 145, 255);
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td .Canceled {
+  color: red;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr td .Unavailable {
+  color: rgb(255, 179, 0);
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr .image {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.appointment-main .appointments-container .appointment-table .appointment-tbody tr:nth-child(n):hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.subscription-main {
+  width: 100%;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(153, 235, 249, 0.1);
+}
+.subscription-main .subscription-finding {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.subscription-main .subscription-finding div {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(47, 181, 177) 0%, rgb(26, 101, 98) 50%);
+  padding: 2px;
+  border-radius: 15px;
+}
+.subscription-main .subscription-finding div input {
+  width: 400px;
+  height: 36px;
+  font-size: 14px;
+  padding-left: 40px;
+  border: none;
+  outline: none;
+  border-radius: inherit;
+  background: white;
+}
+.subscription-main .subscription-finding div i {
+  position: absolute;
+  left: 10px;
+  color: gray;
+}
+.subscription-main .subscription-finding select {
+  width: 100px;
+  padding: 10px;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+.subscription-main .subscriptions-container {
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid rgb(198, 198, 198);
+  border-radius: 15px;
+}
+.subscription-main .subscriptions-container .subscription-table {
+  width: 100%;
+  padding: 10px;
+  border-collapse: collapse;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-thead tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr {
+  cursor: pointer;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr td {
+  padding: 10px 0;
+  font-family: Poppins-Medium;
+  font-size: 14px;
+  color: #858585;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr td img {
+  width: 80px;
+  height: 80px;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr td i {
+  font-size: 20px;
+  padding-left: 15px;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr td .fa-pen-to-square {
+  color: rgb(16, 123, 255);
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr td .fa-trash {
+  color: red;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr .image {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.subscription-main .subscriptions-container .subscription-table .subscription-tbody tr:nth-child(n):hover {
+  background-color: rgb(220, 220, 220);
 }

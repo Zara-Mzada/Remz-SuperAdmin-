@@ -39,8 +39,34 @@
                 <li class="list-item logout"><a href="#" class="logout_btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
             </ul>
          </nav>
-     </main>
 
-     <script src="script.js"></script>
+         <!-- Admin data -->
+         <section class="admin-main">
+            <!-- Filter -->
+            <div class="admin-finding">
+                <div class="search-container">
+                    <input type="text" name="" id="adminsearch_input" value="" placeholder="Name, Surname">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <!-- Admins -->
+            <div class="admins-container">
+                <table class="admin-table">
+                    <thead class="adm-thead">
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="adm-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+     </main>
+     <script src="admin.js"></script>
 </body>
 </html>

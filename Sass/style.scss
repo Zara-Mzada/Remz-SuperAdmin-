@@ -98,29 +98,508 @@ main{
 
 // ************* Patient part ************
 .patient-main{
+    width: 100%;
     padding: 40px 25px;
     display: flex;
     flex-direction: column;
-    .patient-filter{
-        width: 100%;
+    .patient-finding{
+        margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: space-between;
         div{
-            display: flex;
+            position: relative;
+            display: inline-flex;
             align-items: center;
-            overflow: hidden;
+            background: $reserved; 
+            padding: 2px; 
+            border-radius: 15px; 
             input{
-                width: 440px;
-                padding: 15px 30px;
-                font-size: $fs-s;
-                font-family: Poppins-Extralight;
-                border: 2px solid;
-                border-image: $reserved;
-                border-image-slice: 1;
-                border-radius: 25px;
+                width: 400px;
+                height: 36px;
+                font-size: 14px;
+                padding-left: 40px; 
+                border: none;
                 outline: none;
-                overflow: hidden;
+                border-radius: inherit; 
+                background: white; 
+            }
+            i{
+                position: absolute;
+                left: 10px;
+                color: gray;
+            }
+        }
+        .patient-filter{
+            width: 100px;
+            padding: 10px;
+            border-radius: 25px;
+            margin-left: 15px;
+        }
+    }
+}
+
+// ************* Doctor part *************
+.doctor-main{
+    width: 100%;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(153, 235, 249, 0.1);
+    .doctor-finding{
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        div{
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            background: $reserved; 
+            padding: 2px; 
+            border-radius: 15px; 
+            input{
+                width: 400px;
+                height: 36px;
+                font-size: 14px;
+                padding-left: 40px; 
+                border: none;
+                outline: none;
+                border-radius: inherit; 
+                background: white; 
+            }
+            i{
+                position: absolute;
+                left: 10px;
+                color: gray;
+            }
+        }
+        select{
+            width: 100px;
+            padding: 10px;
+            border-radius: 25px;
+            margin-left: 15px;
+        }
+    }
+    .doctors-container{
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px;
+        border: 1px solid rgb(198, 198, 198);
+        border-radius: 15px;
+        table{
+            width: 100%;
+            padding: 10px;
+            border-collapse: collapse;
+            thead{
+                tr{
+                    th{
+                        text-align: left;
+                        padding-bottom: 40px;
+                        padding-left: 10px;
+                        font-family: Poppins-Semibold;
+                        font-size: $fs-s;
+                        color: $text;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    cursor: pointer;
+                    td{
+                        padding: 10px 0;
+                        font-family: Poppins-Medium;
+                        font-size: $fs-m;
+                        color: $text;
+                        &:first-child{
+                            padding-left: 10px;
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                        }
+                        &:last-child{
+                            border-top-right-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                        }
+                        img{
+                            width: 80px;
+                            height: 80px;
+                        }
+                        i{
+                            font-size: 20px;
+                            padding-left: 15px;
+                        }
+                        .fa-pen-to-square{
+                            color: rgb(16, 123, 255);
+                        }
+                        .fa-trash{
+                            color: red;
+                        }
+                    }
+                    .image{
+                        width: 80px;
+                        height: 80px;
+                        background-color: red;
+                    }
+                    th{
+                        text-align: left;
+                        padding-bottom: 40px;
+                        padding-left: 10px;
+                        font-family: Poppins-Semibold;
+                        font-size: $fs-s;
+                        color: $text;
+                    }
+                    &:nth-child(n):hover{
+                        background-color: rgb(220, 220, 220);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ************* Admin part **************
+.admin-main{
+    width: 100%;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(153, 235, 249, 0.1);
+    .admin-finding{
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        div{
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            background: $reserved; 
+            padding: 2px; 
+            border-radius: 15px; 
+            input{
+                width: 400px;
+                height: 36px;
+                font-size: 14px;
+                padding-left: 40px; 
+                border: none;
+                outline: none;
+                border-radius: inherit; 
+                background: white; 
+            }
+            i{
+                position: absolute;
+                left: 10px;
+                color: gray;
+            }
+        }
+    }
+    .admins-container{
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px;
+        border: 1px solid rgb(198, 198, 198);
+        border-radius: 15px;
+        .admin-table{
+            width: 100%;
+            padding: 10px;
+            border-collapse: collapse;
+            .adm-thead{
+                tr{
+                    th{
+                        text-align: left;
+                        padding-bottom: 40px;
+                        font-family: Poppins-Semibold;
+                        font-size: $fs-s;
+                        color: $text;
+                    }
+                }
+            }
+            .adm-tbody{
+                tr{
+                    cursor: pointer;
+                    td{
+                        padding: 10px 0;
+                        font-family: Poppins-Medium;
+                        font-size: $fs-m;
+                        color: $text;
+                        &:first-child{
+                            padding-left: 10px;
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                        }
+                        &:last-child{
+                            border-top-right-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                        }
+                        img{
+                            width: 80px;
+                            height: 80px;
+                        }
+                        i{
+                            font-size: 20px;
+                            padding-left: 15px;
+                        }
+                        .fa-pen-to-square{
+                            color: rgb(16, 123, 255);
+                        }
+                        .fa-trash{
+                            color: red;
+                        }
+                    }
+                    .image{
+                        width: 80px;
+                        height: 80px;
+                        background-color: red;
+                    }
+                    th{
+                        text-align: left;
+                        padding-bottom: 40px;
+                        padding-left: 10px;
+                        font-family: Poppins-Semibold;
+                        font-size: $fs-s;
+                        color: $text;
+                    }
+                    &:nth-child(n):hover{
+                        background-color: rgb(220, 220, 220);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ************* Appointment part ************
+.appointment-main{
+    width: 100%;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(153, 235, 249, 0.1);
+    .appointment-finding{
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        div{
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            background: $reserved; 
+            padding: 2px; 
+            border-radius: 15px; 
+            input{
+                width: 400px;
+                height: 36px;
+                font-size: 14px;
+                padding-left: 40px; 
+                border: none;
+                outline: none;
+                border-radius: inherit; 
+                background: white; 
+            }
+            i{
+                position: absolute;
+                left: 10px;
+                color: gray;
+            }
+        }
+        select{
+            width: 100px;
+            padding: 10px;
+            border-radius: 25px;
+            margin-left: 15px;
+        }
+    }
+    .appointments-container{
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px;
+        border: 1px solid rgb(198, 198, 198);
+        border-radius: 15px;
+        .appointment-table{
+            width: 100%;
+            padding: 10px;
+            border-collapse: collapse;
+            .appointment-thead{
+                tr{
+                    th{
+                        text-align: left;
+                        padding-bottom: 40px;
+                        font-family: Poppins-Semibold;
+                        font-size: $fs-s;
+                        color: $text;
+                    }
+                }
+            }
+            .appointment-tbody{
+                tr{
+                    cursor: pointer;
+                    td{
+                        padding: 10px 0;
+                        font-family: Poppins-Medium;
+                        font-size: $fs-m;
+                        color: $text;
+                        &:first-child{
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                        }
+                        &:last-child{
+                            border-top-right-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                        }
+                        img{
+                            width: 80px;
+                            height: 80px;
+                        }
+                        i{
+                            font-size: 20px;
+                            padding-left: 15px;
+                        }
+                        .fa-pen-to-square{
+                            color: rgb(16, 123, 255);
+                        }
+                        .fa-trash{
+                            color: red;
+                        }
+                        .Reserved{
+                            color: rgb(0, 145, 255);
+                        }
+                        .Canceled{
+                            color: red;
+                        }
+                        .Unavailable{
+                            color: rgb(255, 179, 0);
+                        }
+                    }
+                    .image{
+                        width: 80px;
+                        height: 80px;
+                        background-color: red;
+                    }
+                    th{
+                        text-align: left;
+                        padding-bottom: 40px;
+                        padding-left: 10px;
+                        font-family: Poppins-Semibold;
+                        font-size: $fs-s;
+                        color: $text;
+                    }
+                    &:nth-child(n):hover{
+                        background-color: rgb(220, 220, 220);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ************* Subscription part ***********
+.subscription-main{
+    width: 100%;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(153, 235, 249, 0.1);
+    .subscription-finding{
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        div{
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            background: $reserved; 
+            padding: 2px; 
+            border-radius: 15px; 
+            input{
+                width: 400px;
+                height: 36px;
+                font-size: 14px;
+                padding-left: 40px; 
+                border: none;
+                outline: none;
+                border-radius: inherit; 
+                background: white; 
+            }
+            i{
+                position: absolute;
+                left: 10px;
+                color: gray;
+            }
+        }
+        select{
+            width: 100px;
+            padding: 10px;
+            border-radius: 25px;
+            margin-left: 15px;
+        }
+    }
+    .subscriptions-container{
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px;
+        border: 1px solid rgb(198, 198, 198);
+        border-radius: 15px;
+        .subscription-table{
+            width: 100%;
+            padding: 10px;
+            border-collapse: collapse;
+            .subscription-thead{
+                tr{
+                    th{
+                        text-align: left;
+                        padding-bottom: 40px;
+                        font-family: Poppins-Semibold;
+                        font-size: $fs-s;
+                        color: $text;
+                    }
+                }
+            }
+            .subscription-tbody{
+                tr{
+                    cursor: pointer;
+                    td{
+                        padding: 10px 0;
+                        font-family: Poppins-Medium;
+                        font-size: $fs-m;
+                        color: $text;
+                        &:first-child{
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                        }
+                        &:last-child{
+                            border-top-right-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                        }
+                        img{
+                            width: 80px;
+                            height: 80px;
+                        }
+                        i{
+                            font-size: 20px;
+                            padding-left: 15px;
+                        }
+                        .fa-pen-to-square{
+                            color: rgb(16, 123, 255);
+                        }
+                        .fa-trash{
+                            color: red;
+                        }
+                        
+                    }
+                    .image{
+                        width: 80px;
+                        height: 80px;
+                        background-color: red;
+                    }
+                    th{
+                        text-align: left;
+                        padding-bottom: 40px;
+                        padding-left: 10px;
+                        font-family: Poppins-Semibold;
+                        font-size: $fs-s;
+                        color: $text;
+                    }
+                    &:nth-child(n):hover{
+                        background-color: rgb(220, 220, 220);
+                    }
+                }
             }
         }
     }
