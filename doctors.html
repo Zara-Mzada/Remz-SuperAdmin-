@@ -1,83 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rəmz</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <!-- Header -->
-     <header>
-        <div class="header-container">
-            <a href="#"><img src="./assets/img/logo-light 1.svg" alt="logo"></a>
-            <div class="admin">
-                <i class="fa-solid fa-user"></i>
-                <p id="admin_fullname" class="admin_fullname">
-                   Zahra Malikzada
-                </p>
-            </div>
+    <header>
+      <div class="header-container">
+        <a href="#"><img src="./assets/img/logo-light 1.svg" alt="logo" /></a>
+        <div class="admin">
+          <i class="fa-solid fa-user"></i>
+          <p id="admin_fullname" class="admin_fullname">Zahra Malikzada</p>
         </div>
-     </header>
+      </div>
+    </header>
 
-     <!-- Main -->
-     <main>
+    <!-- Main -->
+    <main>
+      <!-- Nav side -->
+      <nav>
+        <ul class="menu-list">
+          <li class="list-item">
+            <a href="patients.html"
+              ><i class="fa-solid fa-hospital-user"></i> Patients</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="doctors.html"
+              ><i class="fa-solid fa-user-doctor"></i> Doctors</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="hospitals.html"
+              ><i class="fa-solid fa-hospital"></i> Hospitals</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="admins.html"
+              ><i class="fa-solid fa-user-tie"></i> Admins</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="appointments.html"
+              ><i class="fa-solid fa-calendar-check"></i> Appointments</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="subscriptions.html"
+              ><i class="fa-solid fa-bell"></i> Subscriptions</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="statistics.html"
+              ><i class="fa-solid fa-chart-simple"></i> Statistics</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="settings.html"
+              ><i class="fa-solid fa-gears"></i> Settings</a
+            >
+          </li>
+          <li class="list-item logout">
+            <a href="#" class="logout_btn"
+              ><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-        <!-- Nav side -->
-         <nav>
-            <ul class="menu-list">
-                <li class="list-item"><a href="patients.html"><i class="fa-solid fa-hospital-user"></i> Patients</a></li>
-                <li class="list-item"><a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Doctors</a></li>
-                <li class="list-item"><a href="hospitals.html"><i class="fa-solid fa-hospital"></i> Hospitals</a></li>
-                <li class="list-item"><a href="admins.html"><i class="fa-solid fa-user-tie"></i> Admins</a></li>
-                <li class="list-item"><a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
-                <li class="list-item"><a href="subscriptions.html"><i class="fa-solid fa-bell"></i> Subscriptions</a></li>
-                <li class="list-item"><a href="statistics.html"><i class="fa-solid fa-chart-simple"></i> Statistics</a></li>
-                <li class="list-item"><a href="settings.html"><i class="fa-solid fa-gears"></i> Settings</a></li>
-                <li class="list-item logout"><a href="#" class="logout_btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
-            </ul>
-         </nav>
+      <!-- Doctor data -->
+      <section class="doctor-main">
+        <!-- Filter -->
+        <div class="doctor-finding">
+          <div class="search-container">
+            <input
+              type="text"
+              name=""
+              id="doctorsearch_input"
+              value=""
+              placeholder="Name, Surname, Speciality, Hospital"
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <select class="doctor-filter" id="doctor-filter">
+            <option value="Oldes">Oldest</option>
+            <option value="Newest">Newest</option>
+          </select>
+          <select name="" id="doctor-speciality" class="doctor-speciality">
+            <option value="Speciality" hidden>Speciality</option>
+          </select>
+          <button class="addDoctor_btn" id="addDoctor_btn">+ Add</button>
+        </div>
 
-         <!-- Doctor data -->
-         <section class="doctor-main">
-            <!-- Filter -->
-            <div class="doctor-finding">
-                <div class="search-container">
-                    <input type="text" name="" id="doctorsearch_input" value="" placeholder="Name, Surname, Speciality, Hospital">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+        <!-- Doctors -->
+        <div class="doctors-container">
+          <table class="doctor-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Speciality</th>
+                <th>Birthdate</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody class="doc-tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- Add modal -->
+        <div id="addModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create new doctor</h2>
+            <form id="addDoctorForm">
+              <div>
+                <label for="doctorName">Name:</label>
+                <input
+                  type="text"
+                  id="doctorName"
+                  name="doctorName"
+                  required
+                /><br />
+                <small id="nameError"></small>
+              </div>
+
+              <div>
+                <label for="doctorSurname">Surname:</label>
+                <input
+                  type="text"
+                  id="doctorSurname"
+                  name="doctorSurname"
+                  required
+                /><br />
+                <small id="surnameError"></small>
+              </div>
+
+              <div>
+                <label for="">Speciality:</label>
+                <select name="Speciality" id="doctorSelect">
+                  <option value="" hidden>Speciality</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="doctorBirthdate">Birthdate:</label>
+                <input
+                  type="date"
+                  id="doctorBirthdate"
+                  name="doctorBirthdate"
+                  required
+                /><br />
+                <small id="birthError"></small>
+              </div>
+
+              <div>
+                <label for="doctorFIN">FIN:</label>
+                <input
+                  type="text"
+                  id="doctorFIN"
+                  name="doctorFIN"
+                  required
+                /><br />
+                <small id="finError"></small>
+              </div>
+
+              <div>
+                <label for="doctorEmail">Email:</label>
+                <input
+                  type="text"
+                  id="doctorEmail"
+                  name="doctorEmail"
+                  required
+                /><br />
+                <small id="emailError"></small>
+              </div>
+
+              <div>
+                <label for="doctorPhone">Phone:</label>
+                <input
+                  type="number"
+                  id="doctorPhone"
+                  name="doctorPhone"
+                  required
+                /><br />
+                <small id="phoneError"></small>
+              </div>
+
+              <div class="doctornum_properties">
+                <div>
+                  <label for="doctorUniversity">University:</label>
+                  <input
+                    type="text"
+                    id="doctorUniversity"
+                    name="doctorUniversity"
+                    required
+                  /><br />
+                  <small id="uniError"></small>
                 </div>
-                <select class="doctor-filter" id="doctor-filter">
-                    <option value="Oldes">Oldest</option>
-                    <option value="Newest">Newest</option>
-                </select>
-                <select name="" id="doctor-speciality" class =doctor-speciality>
-                    <option value="Speciality" hidden>Speciality</option>
-                </select>
-            </div>
 
-            <!-- Doctors -->
-            <div class="doctors-container">
-                <table class="doctor-table">
-                    <thead >
-                        <tr>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>Speciality</th>
-                            <th>Birthdate</th>
-                            <th>Update</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody class="doc-tbody"></tbody>
-                </table>
-            </div>
-        </section>
-     </main>
+                <div>
+                  <label for="doctorExperience">Experience:</label>
+                  <input
+                    type="number"
+                    id="doctorExperience"
+                    name="doctorExperience"
+                    required
+                  /><br />
+                  <small id="expError"></small>
+                </div>
 
+                <div class="hospitaldiv">
+                  <label for="">HospitalID:</label>
+                  <select name="HospitalID" id="doctorHospital">
+                    <option value="" hidden>Hospital</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div>
+                <label for="doctorImage">Image:</label>
+                <input
+                  type="file"
+                  id="doctorImage"
+                  class="doctorImage"
+                  name="doctorImage"
+                  accept="image/*"
+                /><br />
+                <small id="imageError"></small>
+              </div>
+
+              <button type="submit" id="submit_btn">Add Doctor</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Info modal -->
+        <div id="infoModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create new doctor</h2>
+            <form id="addDoctorForm">
+              <div>
+                <label for="doctorName">Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required />
+              </div>
+
+              <div>
+                <label for="doctorSurname">Surname:</label>
+                <input
+                  type="text"
+                  id="doctorSurname"
+                  name="doctorSurname"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="doctorSpeciality">Speciality:</label>
+                <input
+                  type="text"
+                  id="doctorSpeciality"
+                  name="doctorSpeciality"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="doctorBirthdate">Birthdate:</label>
+                <input
+                  type="date"
+                  id="doctorBirthdate"
+                  name="doctorBirthdate"
+                  required
+                />
+              </div>
+
+              <div class="doctornum_properties">
+                <div>
+                  <label for="doctorUniversity">University:</label>
+                  <input
+                    type="text"
+                    id="doctorUniversity"
+                    name="doctorUniversity"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="doctorExperience">Experience:</label>
+                  <input
+                    type="number"
+                    id="doctorExperience"
+                    name="doctorExperience"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="doctorValue">Value:</label>
+                  <input
+                    type="number"
+                    id="doctorValue"
+                    name="doctorValue"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="doctorHospitalID">HospitalID:</label>
+                  <input
+                    type="number"
+                    id="doctorHospitalID"
+                    name="doctorHospitalID"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="doctorImage">Image:</label>
+                <input
+                  type="file"
+                  id="doctorImage"
+                  class="doctorImage"
+                  name="doctorImage"
+                  accept="image/*"
+                />
+              </div>
+
+              <button type="submit" id="submit_btn">Add Doctor</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script src="doctor.js"></script>
-</body>
+  </body>
 </html>

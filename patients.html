@@ -1,64 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rəmz</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <!-- Header -->
-     <header>
-        <div class="header-container">
-            <a href="#"><img src="./assets/img/logo-light 1.svg" alt="logo"></a>
-            <div class="admin">
-                <i class="fa-solid fa-user"></i>
-                <p id="admin_fullname" class="admin_fullname">
-                   Zahra Malikzada
-                </p>
-            </div>
+    <header>
+      <div class="header-container">
+        <a href="#"><img src="./assets/img/logo-light 1.svg" alt="logo" /></a>
+        <div class="admin">
+          <i class="fa-solid fa-user"></i>
+          <p id="admin_fullname" class="admin_fullname">Zahra Malikzada</p>
         </div>
-     </header>
+      </div>
+    </header>
 
-     <!-- Main -->
-     <main>
+    <!-- Main -->
+    <main>
+      <!-- Nav side -->
+      <nav>
+        <ul class="menu-list">
+          <li class="list-item">
+            <a href="patients.html"
+              ><i class="fa-solid fa-hospital-user"></i> Patients</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="doctors.html"
+              ><i class="fa-solid fa-user-doctor"></i> Doctors</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="hospitals.html"
+              ><i class="fa-solid fa-hospital"></i> Hospitals</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="admins.html"
+              ><i class="fa-solid fa-user-tie"></i> Admins</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="appointments.html"
+              ><i class="fa-solid fa-calendar-check"></i> Appointments</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="subscriptions.html"
+              ><i class="fa-solid fa-bell"></i> Subscriptions</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="statistics.html"
+              ><i class="fa-solid fa-chart-simple"></i> Statistics</a
+            >
+          </li>
+          <li class="list-item">
+            <a href="settings.html"
+              ><i class="fa-solid fa-gears"></i> Settings</a
+            >
+          </li>
+          <li class="list-item logout">
+            <a href="#" class="logout_btn"
+              ><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-        <!-- Nav side -->
-         <nav>
-            <ul class="menu-list">
-                <li class="list-item"><a href="patients.html"><i class="fa-solid fa-hospital-user"></i> Patients</a></li>
-                <li class="list-item"><a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Doctors</a></li>
-                <li class="list-item"><a href="hospitals.html"><i class="fa-solid fa-hospital"></i> Hospitals</a></li>
-                <li class="list-item"><a href="admins.html"><i class="fa-solid fa-user-tie"></i> Admins</a></li>
-                <li class="list-item"><a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
-                <li class="list-item"><a href="subscriptions.html"><i class="fa-solid fa-bell"></i> Subscriptions</a></li>
-                <li class="list-item"><a href="statistics.html"><i class="fa-solid fa-chart-simple"></i> Statistics</a></li>
-                <li class="list-item"><a href="settings.html"><i class="fa-solid fa-gears"></i> Settings</a></li>
-                <li class="list-item logout"><a href="#" class="logout_btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
-            </ul>
-         </nav>
+      <!-- Patient data -->
+      <section class="patient-main">
+        <!-- Filter -->
+        <div class="patient-finding">
+          <div class="search-container">
+            <input type="text" name="" id="patientsearch_input" value="" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <select class="patient-filter">
+            <option value="Oldest">Oldest</option>
+            <option value="Newest">Newest</option>
+          </select>
+          <button class="addPatient_btn" id="addPatient_btn">+ Add</button>
+        </div>
 
-         <!-- Patient data -->
-         <section class="patient-main">
-            <!-- Filter -->
-            <div class="patient-finding">
-                <div class="search-container">
-                    <input type="text" name="" id="patientsearch_input" value="" >
-                    <i class="fa-solid fa-magnifying-glass"></i>
+        <!-- Patients -->
+        <div class="patients-container">
+          <table class="patient-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Birthdate</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody class="pat-tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- Patient Modal -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create new doctor</h2>
+            <form id="addPatientForm">
+              <div>
+                <label for="patientName">Name:</label>
+                <input type="text" id="patientName" name="Name" required />
+              </div>
+
+              <div>
+                <label for="patientSurname">Surname:</label>
+                <input
+                  type="text"
+                  id="patientSurname"
+                  name="Surname"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="patientBirthdate">Birthdate:</label>
+                <input
+                  type="date"
+                  id="patientBirthdate"
+                  name="Birthdate"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="patientFIN">FIN:</label>
+                <input type="text" id="patientFIN" name="FIN" minlength="7" maxlength="7" required />
+              </div>
+
+              <div>
+                <label for="patientEmail">Email:</label>
+                <input type="email" id="patientEmail" name="Email" required />
+              </div>
+
+              <div>
+                <label for="patientPhone">Phone:</label>
+                <input type="number" id="patientPhone" name="Phone" required />
+              </div>
+
+              <div class="password-part">
+                <label for="patientPassword">Password:</label>
+                <div class="password-container">
+                    <input
+                  type="password"
+                  id="patientPassword"
+                  name="Password"
+                  placeholder="Enter your password"
+                />
+                <span class="toggle-icon" onclick="togglePassword()">👁️</span>
                 </div>
-                <select class="patient-filter">
-                    <option value="Oldest">Oldest</option>
-                    <option value="Newest">Newest</option>
-                </select>
-            </div>
+              </div>
+              
+              <div>
+                <label for="patientImage">Image:</label>
+                <input
+                  type="file"
+                  id="patientImage"
+                  class="patientImage"
+                  name="Image"
+                  accept="image/*"
+                />
+              </div>
 
-            <!-- Patients -->
-            <div>
+              <div class="gender-selection">
+                <label>Select your gender</label><br>
+                <input type="radio" name="Gender" id="male" value="2" checked />
+                Male<br />
+                <input type="radio" name="Gender" id="female" value="1" /> Female<br />
+              </div>
 
-            </div>
-        </section>
-     </main>
-</body>
+              
+              <button type="submit" id="submit_btn">Add Patient</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="patient.js"></script>
+  </body>
 </html>

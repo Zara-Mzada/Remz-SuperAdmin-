@@ -113,6 +113,7 @@ main nav .menu-list .list-item:last-child:hover {
   padding: 40px 25px;
   display: flex;
   flex-direction: column;
+  background-color: rgba(153, 235, 249, 0.1);
 }
 .patient-main .patient-finding {
   margin: 0 auto;
@@ -147,6 +148,168 @@ main nav .menu-list .list-item:last-child:hover {
   padding: 10px;
   border-radius: 25px;
   margin-left: 15px;
+}
+.patient-main .patient-finding button {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.patient-main .patients-container {
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid rgb(198, 198, 198);
+  border-radius: 15px;
+}
+.patient-main .patients-container table {
+  width: 100%;
+  padding: 10px;
+  border-collapse: collapse;
+}
+.patient-main .patients-container table thead tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.patient-main .patients-container table tbody tr {
+  cursor: pointer;
+}
+.patient-main .patients-container table tbody tr td {
+  padding: 10px 0;
+  font-family: Poppins-Medium;
+  font-size: 14px;
+  color: #858585;
+}
+.patient-main .patients-container table tbody tr td:first-child {
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.patient-main .patients-container table tbody tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.patient-main .patients-container table tbody tr td img {
+  width: 80px;
+  height: 80px;
+}
+.patient-main .patients-container table tbody tr td i {
+  font-size: 20px;
+  padding-left: 15px;
+}
+.patient-main .patients-container table tbody tr td .fa-pen-to-square {
+  color: rgb(16, 123, 255);
+}
+.patient-main .patients-container table tbody tr td .fa-trash {
+  color: red;
+}
+.patient-main .patients-container table tbody tr .image {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
+.patient-main .patients-container table tbody tr th {
+  text-align: left;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  font-family: Poppins-Semibold;
+  font-size: 12px;
+  color: #858585;
+}
+.patient-main .patients-container table tbody tr:nth-child(n):hover {
+  background-color: rgb(220, 220, 220);
+}
+.patient-main .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.patient-main .modal .modal-content {
+  background-color: white;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 1000px;
+}
+.patient-main .modal .modal-content .close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.patient-main .modal .modal-content .close-btn:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.patient-main .modal .modal-content form div {
+  margin: 10px 0;
+}
+.patient-main .modal .modal-content form div label {
+  color: red;
+}
+.patient-main .modal .modal-content form div input {
+  width: 700px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 0 10px;
+  outline: none;
+}
+.patient-main .modal .modal-content form .password-part {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.patient-main .modal .modal-content form .password-part .password-container {
+  position: relative;
+  width: 300px;
+}
+.patient-main .modal .modal-content form .password-part .password-container input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+.patient-main .modal .modal-content form .password-part .password-container .toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: gray;
+}
+.patient-main .modal .modal-content form .password-part .password-container .toggle-icon:hover {
+  color: black;
+}
+.patient-main .modal .modal-content form .gender-selection {
+  margin-bottom: 20px;
+}
+.patient-main .modal .modal-content form .gender-selection label {
+  display: block;
+}
+.patient-main .modal .modal-content form .gender-selection input {
+  width: auto;
+  height: auto;
+}
+.patient-main .modal .modal-content form .patientImage {
+  border: none;
 }
 
 .doctor-main {
@@ -189,6 +352,14 @@ main nav .menu-list .list-item:last-child:hover {
   padding: 10px;
   border-radius: 25px;
   margin-left: 15px;
+}
+.doctor-main .doctor-finding button {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-left: 15px;
+  cursor: pointer;
 }
 .doctor-main .doctors-container {
   width: 100%;
@@ -257,6 +428,158 @@ main nav .menu-list .list-item:last-child:hover {
 }
 .doctor-main .doctors-container table tbody tr:nth-child(n):hover {
   background-color: rgb(220, 220, 220);
+}
+.doctor-main .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed at the top of the page */
+  z-index: 1; /* Make sure it is on top of other content */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full screen width */
+  height: 100%; /* Full screen height */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+.doctor-main .modal .modal-content {
+  background-color: white;
+  margin: 50px auto; /* Centering the modal */
+  padding: 20px;
+  border-radius: 10px;
+  width: 1000px; /* Modal width */
+}
+.doctor-main .modal .modal-content .close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.doctor-main .modal .modal-content .close-btn:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.doctor-main .modal .modal-content form div {
+  margin: 10px 0;
+}
+.doctor-main .modal .modal-content form div input {
+  width: 700px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 0 10px;
+  outline: none;
+}
+.doctor-main .modal .modal-content form #doctorSelect {
+  width: 72%;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.doctor-main .modal .modal-content form .doctornum_properties {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+}
+.doctor-main .modal .modal-content form .doctornum_properties .hospitaldiv {
+  width: 40%;
+}
+.doctor-main .modal .modal-content form .doctornum_properties .hospitaldiv #doctorHospital {
+  padding: 10px 0;
+  width: 75%;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+}
+.doctor-main .modal .modal-content form .doctornum_properties div input {
+  display: inline-block;
+  width: 130px;
+  margin-right: 40px;
+}
+.doctor-main .modal .modal-content form .doctorImage {
+  border: none;
+}
+
+.hospital-part {
+  width: 100%;
+  padding: 20px;
+  background-color: #f5fdfe;
+}
+.hospital-part .hospital-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  align-items: center;
+}
+.hospital-part .hospital-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+.hospital-part .hospital-card .hospital-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #258d8a;
+}
+.hospital-part .hospital-card .hospital-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+.hospital-part .hospital-card .hospital-rating {
+  font-size: 16px;
+  color: #ffa500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.hospital-part .hospital-card .hospital-rating i {
+  color: #ffa500;
+}
+.hospital-part .hospital-filter {
+  width: 500px;
+  margin: 30px auto;
+}
+.hospital-part .search-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(47, 181, 177) 0%, rgb(26, 101, 98) 50%);
+  padding: 2px;
+  border-radius: 15px;
+}
+.hospital-part .search-btn {
+  width: 400px;
+  height: 36px;
+  font-size: 14px;
+  padding-left: 40px;
+  border: none;
+  outline: none;
+  border-radius: inherit;
+  background: white;
+}
+.hospital-part .search-container i {
+  position: absolute;
+  left: 10px;
+  color: gray;
+}
+.hospital-part #filter {
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 25px;
+  width: 74px;
+  height: 35px;
+  margin-left: 15px;
 }
 
 .admin-main {
@@ -586,3 +909,52 @@ main nav .menu-list .list-item:last-child:hover {
 .subscription-main .subscriptions-container .subscription-table .subscription-tbody tr:nth-child(n):hover {
   background-color: rgb(220, 220, 220);
 }
+
+.settings {
+  width: 80%;
+  background-color: #f5fdfe;
+}
+.settings .settings-container {
+  width: 1050px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.settings .settings-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+.settings .settings-container .form-group {
+  margin-bottom: 15px;
+}
+.settings .settings-container .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.settings .settings-container .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.settings .settings-container .btn {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.settings .settings-container .btn:hover {
+  background: #0056b3;
+}
+
+/* Modal Background */
