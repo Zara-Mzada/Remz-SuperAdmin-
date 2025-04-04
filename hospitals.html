@@ -49,18 +49,88 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
 
-            <select name="" id="filter">
-                <option value=""  checked hidden>Filter</option>
-                <option value="">Oldest</option>
-                <option value="">Newest</option>
-            </select>
+                <button class="addHospital_btn" id="addHospital_btn">+ Add</button>
 
             </div>
 
+        <!-- Hospitals table -->
           <div class="hospitals">
 
-
           </div>
+
+          <!-- Add modal -->
+        <div id="addModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create new hospital</h2>
+            <form id="addHospitalForm">
+              <div>
+                <input
+                  type="text"
+                  id="hospitalName"
+                  name="hospitalName"
+                  placeholder="Enter hospital name..."
+                  required
+                /><br />
+                <small id="nameError"></small>
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  id="hospitalAbout"
+                  name="hospitalAbout"
+                  placeholder="Enter about hospital..."
+                  required
+                /><br />
+                <small id="AboutError"></small>
+              </div>
+
+              <div>
+                <input
+                  type="number"
+                  id="hospitalPhone"
+                  name="hospitalPhone"
+                  placeholder="Enter phone number of hospital..."
+                  required
+                /><br />
+                <small id="phoneError"></small>
+              </div>
+
+
+              <div class="hospitalSelect">
+                  <select name="Subscription_ID" id="hospitalSubscription">
+                    <option value="" hidden>Subscription</option>
+                  </select>
+              </div>
+
+              <div>
+                <label for="hospitalImage">Hospital image:</label>
+                <input
+                  type="file"
+                  id="hospitalImage"
+                  class="hospitalImage"
+                  name="hospitalImage"
+                  accept="image/*"
+                /><br />
+                <small id="imageError"></small>
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  id="hospitalLocation"
+                  name="hospitalLocation"
+                  placeholder="Enter location of hospital..."
+                  required
+                /><br />
+                <small id="locationError"></small>
+              </div>
+
+              <button type="submit" id="submit_btn">Add Hospital</button>
+            </form>
+          </div>
+        </div>
 
         </section>
      </main>

@@ -82,20 +82,13 @@
           <div class="search-container">
             <input
               type="text"
-              name=""
+              name="doctorsearch_input"
               id="doctorsearch_input"
               value=""
-              placeholder="Name, Surname, Speciality, Hospital"
+              placeholder="Name, Surname"
             />
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-          <select class="doctor-filter" id="doctor-filter">
-            <option value="Oldes">Oldest</option>
-            <option value="Newest">Newest</option>
-          </select>
-          <select name="" id="doctor-speciality" class="doctor-speciality">
-            <option value="Speciality" hidden>Speciality</option>
-          </select>
           <button class="addDoctor_btn" id="addDoctor_btn">+ Add</button>
         </div>
 
@@ -104,7 +97,6 @@
           <table class="doctor-table">
             <thead>
               <tr>
-                <th>Image</th>
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Speciality</th>
@@ -113,14 +105,14 @@
                 <th>Delete</th>
               </tr>
             </thead>
-            <tbody class="doc-tbody"></tbody>
+            <tbody class="doc-tbody" id="doc-tbody"></tbody>
           </table>
         </div>
 
         <!-- Add modal -->
         <div id="addModal" class="modal">
           <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="closeadd-btn">&times;</span>
             <h2>Create new doctor</h2>
             <form id="addDoctorForm">
               <div>
@@ -225,10 +217,9 @@
                     <option value="" hidden>Hospital</option>
                   </select>
                 </div>
-
               </div>
 
-              <div>
+              <!-- <div>
                 <label for="doctorImage">Image:</label>
                 <input
                   type="file"
@@ -238,9 +229,61 @@
                   accept="image/*"
                 /><br />
                 <small id="imageError"></small>
-              </div>
+              </div> -->
 
               <button type="submit" id="submit_btn">Add Doctor</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Edit modal -->
+        <div id="editModal" class="edit_modal">
+          <div class="form-container">
+            <span class="closeedit-btn">&times;</span>
+            <h2>Update Profile</h2>
+            <form id="editDoctorForm">
+              <div class="form-group">
+                <input type="text" id="editDocName" name="editDocName" required  placeholder="Name"/>
+              </div>
+              <div class="form-group">
+                <input type="text" id="editDocSurname" name="editDocSurname" required placeholder="Surname"/>
+              </div>
+              <div class="form-group">
+                <input type="email" id="editDocEmail" name="editDocEmail" required placeholder="Email"/>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="editDocPhone" name="editDocPhone" required placeholder="Phone"/>
+                <input type="hidden" id="editDocPhoneId" />
+              </div>
+              <div class="form-group">
+                <input type="text" id="editDocUniversity" name="editDocUniversity" required placeholder="Unversity"/>
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="editDocExperience"
+                  name="editDocExperience"
+                  required
+                  placeholder="Experience"
+                />
+              </div>
+              <div class="form-group">
+                <label for="birthdate">Birthdate</label>
+                <input type="date" id="editDocBirthdate" name="editDocBirthdate" required />
+              </div>
+              <div class="form-group">
+                <label for="speciality">Speciality</label>
+                <select id="editDocSpeciality" name="editDocSpeciality" required>
+                  <option value="">Select Speciality</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="hospital">Hospital</label>
+                <select id="editDocHospital" name="editDocHospital" required>
+                  <option value="">Select Hospital</option>
+                </select>
+              </div>
+              <button type="submit" id="update-btn" >Update</button>
             </form>
           </div>
         </div>
